@@ -1,4 +1,4 @@
-import {ClientProfile} from './client-profile';
+import { ClientProfile } from './client-profile';
 
 export class Module {
     constructor(

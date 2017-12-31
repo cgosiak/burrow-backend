@@ -1,4 +1,4 @@
-import {Partition} from './partition';
+import { Partition } from './partition';
 
 export class Status {
     constructor(

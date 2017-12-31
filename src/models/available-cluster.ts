@@ -1,5 +1,5 @@
 import { Request } from './request';
-import {Module} from './module';
+import { Module } from './module';
 
 export class AvailableCluster {
     constructor(

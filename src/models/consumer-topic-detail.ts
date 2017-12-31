@@ -1,4 +1,4 @@
-import {ConsumerOffset} from './consumer-offset';
+import { ConsumerOffset } from './consumer-offset';
 
 export class ConsumerTopicDetail {
     constructor(

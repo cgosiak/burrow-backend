@@ -1,11 +1,11 @@
 import * as WebRequest from 'web-request';
 import { AvailableClusters } from './models/available-clusters';
-import {AvailableCluster} from './models/available-cluster';
-import {AvailableConsumers} from './models/available-consumers';
-import {AvailableTopics} from './models/available-topics';
-import {TopicDetail} from './models/topic-detail';
-import {ConsumerDetail} from './models/consumer-detail';
-import {ConsumerStatus} from './models/consumer-status';
+import { AvailableCluster } from './models/available-cluster';
+import { AvailableConsumers } from './models/available-consumers';
+import { AvailableTopics } from './models/available-topics';
+import { TopicDetail } from './models/topic-detail';
+import { ConsumerDetail } from './models/consumer-detail';
+import { ConsumerStatus } from './models/consumer-status';
 
 export class BurrowService {
     burrowUrl: string;

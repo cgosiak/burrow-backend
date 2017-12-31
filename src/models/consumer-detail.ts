@@ -1,6 +1,6 @@
 import { Request } from './request';
-import {ConsumerTopicDetail} from './consumer-topic-detail';
-import {ConsumerStatus} from './consumer-status';
+import { ConsumerTopicDetail } from './consumer-topic-detail';
+import { ConsumerStatus } from './consumer-status';
 
 export class ConsumerDetail {
     public detail: ConsumerStatus;
