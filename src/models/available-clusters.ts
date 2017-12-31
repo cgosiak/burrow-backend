@@ -5,6 +5,6 @@ export class AvailableClusters {
         public error: boolean,
         public message: string,
         public clusters: string[],
-        public request: Request
+        public request: Request,
     ) {}
 }

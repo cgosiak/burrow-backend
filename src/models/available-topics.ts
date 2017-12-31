@@ -5,6 +5,6 @@ export class AvailableTopics {
         public error: boolean,
         public message: string,
         public topics: string[],
-        public request: Request
+        public request: Request,
     ) {}
 }

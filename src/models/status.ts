@@ -1,16 +1,7 @@
 import { Partition } from './partition';
 
 export class Status {
-    constructor(
-        public cluster: string,
-        public group: string,
-        public status: string,
-        public complete: boolean,
-        public partions: Partition[],
-        public lag: number
-    ) {}
-
-    static fromJson(json: any): Status {
+    public static fromJson(json: any): Status {
         const partitions: Partition[] = [];
 
         for (let i = 0; i < json.partitions.length; i++) {
@@ -23,7 +14,16 @@ export class Status {
             json.status,
             json.complete,
             partitions,
-            json.totallag
+            json.totallag,
         );
     }
+
+    constructor(
+        public cluster: string,
+        public group: string,
+        public status: string,
+        public complete: boolean,
+        public partions: Partition[],
+        public lag: number,
+    ) {}
 }

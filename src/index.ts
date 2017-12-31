@@ -1,14 +1,14 @@
 import * as WebRequest from 'web-request';
-import { AvailableClusters } from './models/available-clusters';
 import { AvailableCluster } from './models/available-cluster';
+import { AvailableClusters } from './models/available-clusters';
 import { AvailableConsumers } from './models/available-consumers';
 import { AvailableTopics } from './models/available-topics';
-import { TopicDetail } from './models/topic-detail';
 import { ConsumerDetail } from './models/consumer-detail';
 import { ConsumerStatus } from './models/consumer-status';
+import { TopicDetail } from './models/topic-detail';
 
 export class BurrowService {
-    burrowUrl: string;
+    public burrowUrl: string;
 
     constructor(burrowUrl: string) {
         this.burrowUrl = burrowUrl;
@@ -39,11 +39,6 @@ export class BurrowService {
         return Promise.resolve(consumerDetail);
     }
 
-    private async getConsumerStatus(cluster: string, consumer: string): Promise<ConsumerStatus> {
-        const data = await WebRequest.get(`${this.burrowUrl}/v3/kafka/${cluster}/consumer/${consumer}/lag`);
-        return Promise.resolve(ConsumerStatus.fromJson(JSON.parse(data.content)));
-    }
-
     public async getTopics(cluster: string): Promise<AvailableTopics> {
         const data = await WebRequest.json<AvailableTopics>(`${this.burrowUrl}/v3/kafka/${cluster}/topic`);
         return Promise.resolve(data);
@@ -52,5 +47,10 @@ export class BurrowService {
     public async getTopic(cluster: string, topic: string): Promise<TopicDetail> {
         const data = await WebRequest.json<TopicDetail>(`${this.burrowUrl}/v3/kafka/${cluster}/topic/${topic}`);
         return Promise.resolve(data);
+    }
+
+    private async getConsumerStatus(cluster: string, consumer: string): Promise<ConsumerStatus> {
+        const data = await WebRequest.get(`${this.burrowUrl}/v3/kafka/${cluster}/consumer/${consumer}/lag`);
+        return Promise.resolve(ConsumerStatus.fromJson(JSON.parse(data.content)));
     }
 }

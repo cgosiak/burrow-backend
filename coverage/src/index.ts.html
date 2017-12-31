@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> index.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.82% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as WebRequest from 'web-request';
+import { AvailableCluster } from './models/available-cluster';
+import { AvailableClusters } from './models/available-clusters';
+import { AvailableConsumers } from './models/available-consumers';
+import { AvailableTopics } from './models/available-topics';
+import { ConsumerDetail } from './models/consumer-detail';
+import { ConsumerStatus } from './models/consumer-status';
+import { TopicDetail } from './models/topic-detail';
+&nbsp;
+export class BurrowService {
+    public burrowUrl: string;
+&nbsp;
+    constructor(burrowUrl: string) {
+        this.burrowUrl = burrowUrl;
+    }
+&nbsp;
+    public async getClusters(): Promise&lt;AvailableClusters&gt; {
+        const data = await WebRequest.json&lt;AvailableClusters&gt;(`${this.burrowUrl}/v3/kafka`);
+        return Promise.resolve(data);
+    }
+&nbsp;
+    public async getCluster(cluster: string): Promise&lt;AvailableCluster&gt; {
+        const initialResponse = await WebRequest.get(`${this.burrowUrl}/v3/kafka/${cluster}`);
+&nbsp;
+        return Promise.resolve(AvailableCluster.fromJson(JSON.parse(initialResponse.content)));
+    }
+&nbsp;
+    public async getConsumers(cluster: string): Promise&lt;AvailableConsumers&gt; {
+        const data = await WebRequest.json&lt;AvailableConsumers&gt;(`${this.burrowUrl}/v3/kafka/${cluster}/consumer`);
+        return Promise.resolve(data);
+    }
+&nbsp;
+    public async getConsumer(cluster: string, consumer: string): Promise&lt;ConsumerDetail&gt; {
+        const initialResponse = await WebRequest.get(`${this.burrowUrl}/v3/kafka/${cluster}/consumer/${consumer}`);
+        const consumerDetail = ConsumerDetail.fromJson(JSON.parse(initialResponse.content));
+&nbsp;
+        consumerDetail.detail = await this.getConsumerStatus(cluster, consumer);
+&nbsp;
+        return Promise.resolve(consumerDetail);
+    }
+&nbsp;
+    public async <span class="fstat-no" title="function not covered" >getTopics</span>(cluster: string): Promise&lt;AvailableTopics&gt; {
+        const data = <span class="cstat-no" title="statement not covered" >await WebRequest.json&lt;AvailableTopics&gt;(`${this.burrowUrl}/v3/kafka/${cluster}/topic`);</span>
+<span class="cstat-no" title="statement not covered" >        return Promise.resolve(data);</span>
+    }
+&nbsp;
+    public async <span class="fstat-no" title="function not covered" >getTopic</span>(cluster: string, topic: string): Promise&lt;TopicDetail&gt; {
+        const data = <span class="cstat-no" title="statement not covered" >await WebRequest.json&lt;TopicDetail&gt;(`${this.burrowUrl}/v3/kafka/${cluster}/topic/${topic}`);</span>
+<span class="cstat-no" title="statement not covered" >        return Promise.resolve(data);</span>
+    }
+&nbsp;
+    private async getConsumerStatus(cluster: string, consumer: string): Promise&lt;ConsumerStatus&gt; {
+        const data = await WebRequest.get(`${this.burrowUrl}/v3/kafka/${cluster}/consumer/${consumer}/lag`);
+        return Promise.resolve(ConsumerStatus.fromJson(JSON.parse(data.content)));
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 31 2017 17:04:46 GMT-0600 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

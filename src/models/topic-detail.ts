@@ -5,6 +5,6 @@ export class TopicDetail {
         public error: boolean,
         public message: string,
         public offsets: number[],
-        public request: Request
+        public request: Request,
     ) {}
 }

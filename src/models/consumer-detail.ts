@@ -1,29 +1,29 @@
-import { Request } from './request';
-import { ConsumerTopicDetail } from './consumer-topic-detail';
 import { ConsumerStatus } from './consumer-status';
+import { ConsumerTopicDetail } from './consumer-topic-detail';
+import { Request } from './request';
 
 export class ConsumerDetail {
-    public detail: ConsumerStatus;
+    public static fromJson(json: any): ConsumerDetail {
+        const topics: ConsumerTopicDetail[] = [];
 
-    constructor(
-        public error: boolean,
-        public message: string,
-        public topics: ConsumerTopicDetail[],
-        public request: Request
-    ) {}
-
-    static fromJson(json: any): ConsumerDetail {
-        let topics: ConsumerTopicDetail[] = [];
-
-        Object.keys(json.topics).forEach(key => {
-           topics.push(ConsumerTopicDetail.fromJson(json.topics[key], key));
+        Object.keys(json.topics).forEach((key) => {
+            topics.push(ConsumerTopicDetail.fromJson(json.topics[key], key));
         });
 
         return new ConsumerDetail(
             json.error,
             json.message,
             topics,
-            Request.fromJson(json.request)
+            Request.fromJson(json.request),
         );
     }
+
+    public detail: ConsumerStatus;
+
+    constructor(
+        public error: boolean,
+        public message: string,
+        public topics: ConsumerTopicDetail[],
+        public request: Request,
+    ) {}
 }

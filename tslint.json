@@ -3,6 +3,11 @@
   "extends": [
     "tslint:latest"
   ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules"
+    ]
+  },
   "jsRules": {},
   "rules": {
     "array-type": [true, "array"],
@@ -30,6 +35,8 @@
     "no-null-keyword": true,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": [true, "ignore-comments", "ignore-jsdoc"],
+    "no-string-literal": false,
+    "prefer-for-of": false,
     "no-var-keyword": true,
     "object-literal-shorthand": true,
     "one-line": [true,

@@ -5,6 +5,6 @@ export class AvailableConsumers {
         public error: boolean,
         public message: string,
         public consumers: string[],
-        public request: Request
+        public request: Request,
     ) {}
 }
