@@ -1,0 +1,56 @@
+{
+  "name": "burrow-backend",
+  "version": "1.0.0",
+  "description": "Backend service to talk to Burrow 1.x instance",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run lint && npm run test && npm run build",
+    "build": "npm run build:ts && npm run build:doc",
+    "build:ts": "tsc",
+    "build:doc": "./node_modules/typedoc/bin/typedoc --out ./docs ./src",
+    "test": "nyc mocha -r ts-node/register ./**/*.spec.ts",
+    "clean:dist": "rm -rf dist",
+    "clean:coverage": "rm -rf coverage && rm -rf .nyc_output",
+    "clean": "npm run clean:coverage && npm run clean:dist",
+    "rebuild": "npm run clean && npm run build",
+    "lint": "./node_modules/tslint/bin/tslint --project ."
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.spec.ts",
+      "coverage",
+      "dist",
+      "test",
+      "docs"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ],
+    "all": true
+  },
+  "author": "Caleb J. Gosiak",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.0.6",
+    "@types/es6-promise": "0.0.33",
+    "@types/mocha": "^2.2.44",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "source-map-support": "^0.5.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typedoc": "^0.9.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "web-request": "^1.0.7"
+  }
+}
